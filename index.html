@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario 64 Wetter App</title>
+    <link rel="icon" href="Logo.ico" type="image/x-icon">
+    <style>
+        body {
+            background-image: url('mario_background.png');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .weather-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            display: none; /* Verstecke das Wetter-Container standardmäßig */
+        }
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+        }
+        .temperature {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        .description {
+            font-size: 1.2em;
+        }
+        .user-input {
+            font-size: 1.2em;
+            color: black;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1 style="color: black;">Super Mario 64 Wetter App</h1>
+    <div>
+        <label style="color: black;" for="level-input">Geben Sie ein Super Mario 64 Level ein:</label>
+        <input type="text" id="level-input">
+        <br>
+        <br>
+        <button onclick="changeBackground()">Wetterdaten bekommen</button>
+    </div>
+    <br>
+    <br>
+    <p id="user-input-display" style="color: black;"></p>
+    <div class="weather-container">
+        <img src="sunny.png" alt="Wetter Icon" class="weather-icon">
+        <div class="temperature">20°C</div>
+        <div class="description">Sonnig</div>
+    </div>
+</body>
+</html>
