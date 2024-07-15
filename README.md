@@ -2,7 +2,7 @@
 
 A fun Mario 64 Weather app that uses real weather data from the OpenMeteo API.
 
-![Test](Assets/website.png)
+![image](https://github.com/user-attachments/assets/910c8bb1-55b8-4b50-a2db-1a75eaa56139)
 
 ## Features
 - Utilizes HTML, JS, and CSS for the user interface.
