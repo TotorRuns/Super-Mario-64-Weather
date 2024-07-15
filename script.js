@@ -1,33 +1,32 @@
 async function changeBackground() {
     let level = document.getElementById('level-input').value;
     let backgroundImage = document.body;
-    let backgroundimage = "mario_background.jpg";
+    let backgroundimage = " ";
     let city = '';
 
     switch(level) {
         case 'BOB':
-            backgroundimage = 'bob.png';
-            city = 'New York'; // Beispielstadt für Bob-omb Battlefield
+            backgroundimage = 'Assets/SM64 Levels/BOB.png';
+            city = 'New York';
             break;
         case 'WF':
-            backgroundimage = 'wf.png';
-            city = 'Berlin'; // Beispielstadt für Whomp's Fortress
+            backgroundimage = 'Assets/SM64 Levels/WF.png';
+            city = 'Berlin';
             break;
         case 'JRB':
-            backgroundimage = 'jrb.jpg';
-            city = 'Venice'; // Beispielstadt für Jolly Roger Bay
+            backgroundimage = 'Assets/SM64 Levels/JRB.png';
+            city = 'Venice';
             break;
         case 'LLL':
-            backgroundimage = 'lll.png';
+            backgroundimage = 'Assets/SM64 Levels/LLL.png';
             city = 'Furnance Creek';
             break;
-        // Fügen Sie hier weitere Level hinzu
         default:
-            backgroundimage = 'mario_background.png'; // Standardhintergrund // Standardstadt
+            backgroundimage = 'Assets/SM64 Levels/CastleC.png';
+            city = 'Merano';
     }
     backgroundImage.style.backgroundImage = "url('" + backgroundimage + "')";
 
-    // Koordinaten der Stadt von der Nominatim API abrufen
     const geocodingUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${city}`;
 
     try {
@@ -36,26 +35,27 @@ async function changeBackground() {
         const latitude = geocodingData[0].lat;
         const longitude = geocodingData[0].lon;
 
-        // Wetterdaten von der Open-Meteo API abrufen
         const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=Europe/Berlin`;
 
         const weatherResponse = await fetch(weatherUrl);
         const weatherData = await weatherResponse.json();
         document.querySelector('.temperature').textContent = `${Math.round(weatherData.current_weather.temperature)}°C`;
         document.querySelector('.description').textContent = getWeatherDescription(weatherData.current_weather.weathercode);
-        // Open-Meteo API liefert keine Icons, daher wird das Icon nicht aktualisiert
+        
+        const weatherIcon = getWeatherIcon(weatherData.current_weather.weathercode);
+        document.querySelector('.weather-icon').src = weatherIcon;
+        document.querySelector('.weather-icon').alt = getWeatherDescription(weatherData.current_weather.weathercode);
     } catch (error) {
         console.error('Fehler beim Abrufen der Daten:', error);
     }
 
-    // Zeige das Wetter-Container an, nachdem der Button geklickt wurde
     document.querySelector('.weather-container').style.display = 'inline-block';
     ausgabe();
 }
 
 function ausgabe() {
     const userInput = document.getElementById('level-input').value;
-    document.getElementById('user-input-display').textContent = "Aktuelles Wettern in "+ userInput + ":";
+    document.getElementById('user-input-display').textContent = "Aktuelles Wetter in "+ userInput + ":";
 };
 
 function getWeatherDescription(weatherCode) {
@@ -90,4 +90,38 @@ function getWeatherDescription(weatherCode) {
         99: 'Gewitter mit starkem Hagel'
     };
     return weatherDescriptions[weatherCode] || 'Unbekanntes Wetter';
+}
+
+function getWeatherIcon(weatherCode) {
+    const weatherIcons = {
+        0: 'Assets/Weather Icons/day_clear.png',
+        1: 'Assets/Weather Icons/day_clear.png',
+        2: 'Assets/Weather Icons/day_partial_cloud.png',
+        3: 'Assets/Weather Icons/cloudy.png',
+        45: 'Assets/Weather Icons/fog.png',
+        48: 'Assets/Weather Icons/mist.png',
+        51: 'Assets/Weather Icons/rain.png',
+        53: 'Assets/Weather Icons/rain.png',
+        55: 'Assets/Weather Icons/rain.png',
+        56: 'Assets/Weather Icons/sleet.png',
+        57: 'Assets/Weather Icons/sleet.png',
+        61: 'Assets/Weather Icons/rain.png',
+        63: 'Assets/Weather Icons/rain.png',
+        65: 'Assets/Weather Icons/rain.png',
+        66: 'Assets/Weather Icons/sleet.png',
+        67: 'Assets/Weather Icons/sleet.png',
+        71: 'Assets/Weather Icons/snow.png',
+        73: 'Assets/Weather Icons/snow.png',
+        75: 'Assets/Weather Icons/snow.png',
+        77: 'Assets/Weather Icons/snow_grains.png',
+        80: 'Assets/Weather Icons/rain.png',
+        81: 'Assets/Weather Icons/rain.png',
+        82: 'Assets/Weather Icons/rain.png',
+        85: 'Assets/Weather Icons/snow.png',
+        86: 'Assets/Weather Icons/snow.png',
+        95: 'Assets/Weather Icons/rain_thunder.png',
+        96: 'Assets/Weather Icons/snow_thunder.png',
+        99: 'Assets/Weather Icons/snow_thunder.png'
+    };
+    return weatherIcons[weatherCode] || 'Assets/Weather Icons/unknown.png';
 }
