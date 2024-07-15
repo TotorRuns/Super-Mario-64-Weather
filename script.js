@@ -19,7 +19,7 @@ async function changeBackground() {
             break;
         case 'CCM':
             backgroundimage = 'Assets/SM64_Levels/CCM.png';
-            city = 'Zermatt';
+            city = 'Canberra';
             break;
         case 'BBH':
             backgroundimage = 'Assets/SM64_Levels/BBH.png';
@@ -31,7 +31,7 @@ async function changeBackground() {
             break;
         case 'LLL':
             backgroundimage = 'Assets/SM64_Levels/LLL.png';
-            city = 'Furnance Creek';
+            city = 'Saudi Arabia';
             break;
         case 'SSL':
             backgroundimage = 'Assets/SM64_Levels/SSL.png';
@@ -43,7 +43,7 @@ async function changeBackground() {
             break;
         case 'SL':
             backgroundimage = 'Assets/SM64_Levels/SL.png';
-            city = 'Reykjavik';
+            city = 'Antartica';
             break;
         case 'WDW':
             backgroundimage = 'Assets/SM64_Levels/WDW.png';

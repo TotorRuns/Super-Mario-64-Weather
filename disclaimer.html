@@ -7,68 +7,87 @@
     <link rel="icon" href="Assets/Logo.ico" type="image/x-icon">
     <style>
         body {
-            background-image: url('mario_background.png');
+            background-image: url('Assets/mario_background.png');
             background-size: cover;
             font-family: 'Arial', sans-serif;
             color: white;
             text-align: center;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            margin: 0px;
+            width: 100%
         }
         .inputbg {
             background-color: #000000a0;
             border-radius: 20px;
             padding-bottom: 15px;
             padding-top: 1px;
-            width: 30%;
+            width: 29.28%;
             text-align: center;
             padding-left: 5px;
             padding-right: 5px;
+            margin: 60px
         }
         .bottom-nav {
             background-color: #000000a0;
             padding: 10px;
             position: fixed;
             bottom: 0;
-            width: 100%;
             display: flex;
             justify-content: space-around;
+            margin-left: 35%;
+            margin-bottom: 30px;
+            border-radius: 20px;
         }
         .nav-item {
-            color: #fff;
             font-size: 14px;
-        }
-        .warning-icon {
-            width: 30px;
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-        .nav-item {
             color: #fff;
-            font-size: 14px;
+            text-decoration: none;
+            border-radius: 9px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 3px;
+            padding-bottom: 3px;
         }
         .nav-item a {
             color: #fff;
             text-decoration: none;
             border-radius: 9px;
-            padding: 3px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .nav-item:hover {
+            background-color: #FFFFFF30;
+        }
+        .nav-item:active {
+            background-color: #303030;
+        }
+        .nav-item:selected {
+            background-color: #1060FF;
+        }
+        .nav-item.checked {
+            background-color: #1060FF;
+        }
+        .nav-item.checked:hover {
+            background-color: #4A85FF;
+        }
+        .warning-icon {
+            width: 50px;
+            height: auto;
+            vertical-align: middle;
         }
     </style>
 </head>
-<body style="background-image: url('Assets/mario_background.png');">  
+<body>
     <div class="inputbg">
-        <h1><img src="Assets/warning_icon.png" alt="Warnung" class="warning-icon">Disclaimer</h1>
+        <h1><img src="Assets/warning_icon.png" alt="Warnung" class="warning-icon"> Disclaimer</h1>
         <p>Diese Webapp ist nur zum Spaß gedacht und stellt nicht das tatsächliche Wetter in Super Mario 64 dar. Alle Wetterdaten basieren auf realen Wetterinformationen und sind nicht mit dem Spiel verbunden.</p>
     </div>
     <div class="bottom-nav">
         <div class="nav-item"><a href="index.html">Home</a></div>
         <div class="nav-item"><a href="disclaimer.html">Disclaimer</a></div>
-        <div class="nav-item"> <a href="level.html">Liste an Leveln die abgefragt werden können.</a></div>
+        <div class="nav-item"><a href="level.html">Level Liste</a></div>
     </div>
+    <script src="nav-button.js"></script>
 </body>
 </html>

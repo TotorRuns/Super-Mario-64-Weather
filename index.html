@@ -12,11 +12,13 @@
             font-family: 'Arial', sans-serif;
             color: white;
             text-align: center;
-            padding: 50px;
+            margin: 0px;
+            width: 100%
         }
         .weather-container {
-            background-color: #000000a0;
-            border-radius: 10px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 9px;
             padding: 20px;
             display: inline-block;
             display: none;
@@ -40,8 +42,11 @@
             padding: 5px;
             padding-left: 6px;
             padding-right: 6px;
-            border: 2px solid #6b6b6b;
+            border: transparent;
             margin-top: 5px;
+        }
+        input:active {
+            background-color: #252525;
         }
         label {
             color: #fff;
@@ -49,11 +54,14 @@
         button {
             background-color: #111;
             color: #fff;
-            border: 1px solid #6b6b6b;
+            border: transparent;
             border-radius: 9px;
             padding: 3px;
-            border: 2px solid #555;
+            border: transparent;
             font-size: 13px;
+        }
+        button:active {
+            background-color: #252525;
         }
         .inputbg {
             background-color: #000000a0;
@@ -61,25 +69,52 @@
             padding-bottom: 15px;
             padding-top: 1px;
             width: 30%;
+            margin: 60px
         }
         .bottom-nav {
             background-color: #000000a0;
             padding: 10px;
             position: fixed;
             bottom: 0;
-            width: 100%;
             display: flex;
             justify-content: space-around;
+            margin-left: 35%;
+            margin-bottom: 30px;
+            border-radius: 20px;
         }
         .nav-item {
-            color: #fff;
             font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 9px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 3px;
+            padding-bottom: 3px;
         }
         .nav-item a {
             color: #fff;
             text-decoration: none;
             border-radius: 9px;
-            padding: 3px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .nav-item:hover {
+            background-color: #FFFFFF30;
+        }
+        .nav-item:active {
+            background-color: #303030;
+        }
+        .nav-item:selected {
+            background-color: #1060FF;
+        }
+        .nav-item.checked {
+            background-color: #1060FF;
+        }
+        .nav-item.checked:hover {
+            background-color: #4A85FF;
         }
     </style>
     <script src="script.js"></script>
@@ -103,7 +138,8 @@
     <div class="bottom-nav">
         <div class="nav-item"><a href="index.html">Home</a></div>
         <div class="nav-item"><a href="disclaimer.html">Disclaimer</a></div>
-        <div class="nav-item"> <a href="level.html">Liste an Leveln die abgefragt werden können.</a></div>
+        <div class="nav-item"> <a href="level.html">Level Liste</a></div>
     </div>
+    <script src="nav-button.js"></script>
 </body>
 </html>
