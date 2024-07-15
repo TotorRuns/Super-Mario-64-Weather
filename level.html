@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Mario 64 Wetter App</title>
+    <title>Super Mario 64 Level Liste</title>
     <link rel="icon" href="Assets/Logo.ico" type="image/x-icon">
     <style>
         body {
@@ -75,30 +75,38 @@
             color: #fff;
             font-size: 14px;
         }
+        .nav-item {
+            color: #fff;
+            font-size: 14px;
+        }
         .nav-item a {
             color: #fff;
             text-decoration: none;
-            border-radius: 9px;
             padding: 3px;
         }
     </style>
-    <script src="script.js"></script>
 </head>
 <body style="background-image: url('Assets/mario_background.png');">  
     <div class="inputbg">
-        <h1>Super Mario 64 Wetter App</h1>
-        <label style="color: rgb(255, 255, 255);" for="level-input">Geben Sie ein Super Mario 64 Level ein:</label>
-        <input type="text" id="level-input">
-        <br>
-        <br>
-        <button class=".button"onclick="changeBackground()">Wetterdaten bekommen</button>
-        <br>
-        <p class="user-input"id="user-input-display"></p>
-        <div class="weather-container">
-            <img alt="Wetter Icon" class="weather-icon">
-            <div class="temperature"></div>
-            <div class="description"></div>
-        </div>
+        <h1>Super Mario 64 Level Liste</h1>
+        <h2>Verfügbare Level:</h2>
+        <ul>
+            <li>BOB - Bob-omb Battlefield</li>
+            <li>WF - Whomp's Fortress</li>
+            <li>JRB - Jolly Roger Bay</li>
+            <li>CCM - Cool Cool Mountain</li>
+            <li>BBH - Big Boo's Haunt</li>
+            <li>HMC - Hazy Maze Cave</li>
+            <li>LLL - Lethal Lava Land</li>
+            <li>SSL - Shifting Sand Land</li>
+            <li>DDD - Dire Dire Docks</li>
+            <li>SL - Snowman's Land</li>
+            <li>WDW - Wet Dry World</li>
+            <li>TTM - Tall Tall Mountain</li>
+            <li>THI - Tiny Huge Island</li>
+            <li>TTC - Tick Tock Clock</li>
+            <li>RR - Rainbow Ride</li>
+        </ul>
     </div>
     <div class="bottom-nav">
         <div class="nav-item"><a href="index.html">Home</a></div>
